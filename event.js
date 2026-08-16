@@ -1,10 +1,20 @@
-let copy = document.querySelector("ul")
+let myPromise = new Promise((res, rej) => {
+  setInterval(() => {
+    let value = Math.floor(Math.random() * 10);
+    // console.log(value);
 
-copy.addEventListener("click", (dets) => {
+    if (value > 5) {
+      res( "Success "+  value);
+    } else {
+      rej( "Error "+   value);
+    }
+  }, 1000);
+});
 
-    dets.target.classList.toggle("lt")
-
-
-
-
-})
+myPromise
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((rej) => {
+    console.log(rej);
+  });
