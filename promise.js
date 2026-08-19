@@ -17,4 +17,8 @@ myPromise
   })
   .catch((rej) => {
     console.log(rej);
-  });
+  })
+  .finally(()=>{
+     console.log("Promise completed");
+    
+  })
